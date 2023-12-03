@@ -1,35 +1,12 @@
-import { useState, useEffect } from 'react'
-import * as marked from 'marked'
-import DOMPurify from 'dompurify'
 import './App.css'
-import { textPlaceholder } from './constants/textPlaceholder'
-
+import MarkdownToText from './components/markdownToText'
+import HtmlToMarkdown from './components/HtmlToMarkdown'
 function App() {
-	const [markdown, setMarkdown] = useState(textPlaceholder)
-	const [renderedHtml, setRenderedHtml] = useState('')
-
-	useEffect(() => {
-		async function renderMarkdown() {
-			const rawMarkup = await marked.parse(markdown)
-			const sanitizedMarkup = DOMPurify.sanitize(rawMarkup)
-			setRenderedHtml(sanitizedMarkup)
-		}
-
-		renderMarkdown()
-	}, [markdown])
-
 	return (
-		<div className='app-wrapper'>
-			<textarea
-				className='text-area'
-				onChange={(e) => setMarkdown(e.target.value)}
-				value={markdown}
-			/>
-			<div
-				className='text-converted'
-				dangerouslySetInnerHTML={{ __html: renderedHtml }}
-			/>
-		</div>
+		<>
+			{/* <MarkdownToText /> */}
+			<HtmlToMarkdown />
+		</>
 	)
 }
 
