@@ -7,8 +7,8 @@ function App() {
 		<div>
 			<a href=''>MD TO TEXT</a>
 			<a href=''>HTLM TO MD</a>
-			{/* <MarkdownToText /> */}
-			<HtmlToMarkdown />
+			<MarkdownToText />
+			{/* <HtmlToMarkdown /> */}
 		</div>
 	)
 }
