@@ -14,10 +14,8 @@ function HtmlToMarkdown() {
 		strongDelimiter: '**',
 		linkStyle: 'inlined',
 		linkReferenceStyle: 'full',
-		// Otras configuraciones según sea necesario
 	})
 
-	// Añadir la regla personalizada
 	turndownService.addRule('paragraph', {
 		filter: 'p',
 		replacement: function (content) {
