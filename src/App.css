@@ -1,6 +1,15 @@
 .header-nav {
+	height: 7vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	background-color: #010409;
+}
+
+.header-nav ul {
 	display: flex;
 	list-style: none;
+	gap: 40px;
 }
 
 .converter-wrapper {
@@ -8,12 +17,15 @@
 	width: 100vw;
 	display: flex;
 	gap: 1%;
+	background-color: #0d1016;
 }
 
 .text-area {
 	resize: none;
 	height: auto;
 	width: 50%;
+	background-color: #1b222e;
+	color: white;
 }
 
 .text-converted {
