@@ -1,14 +1,19 @@
 import './App.css'
-import MarkdownToText from './components/markdownToText'
+import MarkdownToText from './components/MarkdownToText'
 import HtmlToMarkdown from './components/HtmlToMarkdown'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
 
 function App() {
 	return (
 		<div>
-			<a href=''>MD TO TEXT</a>
-			<a href=''>HTLM TO MD</a>
-			<MarkdownToText />
-			{/* <HtmlToMarkdown /> */}
+			<BrowserRouter>
+				<Header />
+				<Routes>
+					<Route path='/' element={<MarkdownToText />} />
+					<Route path='/htmltomd' element={<HtmlToMarkdown />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
 	)
 }

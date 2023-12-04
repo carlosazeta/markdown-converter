@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import * as marked from 'marked'
 import DOMPurify from 'dompurify'
 import { textPlaceholder } from '../constants/textPlaceholder'
@@ -7,7 +7,7 @@ function MarkdownToText() {
 	const [markdown, setMarkdown] = useState(textPlaceholder)
 
 	const renderedHtml = useMemo(() => {
-		const rawMarkup = marked.parse(markdown)
+		const rawMarkup = marked.parse(markdown) as string
 		return DOMPurify.sanitize(rawMarkup)
 	}, [markdown])
 
